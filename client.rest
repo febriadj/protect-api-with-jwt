@@ -1,0 +1,12 @@
+GET http://localhost:3000/
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/api
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlYnJpYWRqaSIsImlhdCI6MTYxNDQyNDM5MH0.qgdfR8MQT5IBVcbM-U4TtXeJRWejRjZlwtvtoSgtJhQ
+
+###
+
+GET http://localhost:3000/get-token?name=febriadji
+Content-Type: application/json

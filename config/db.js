@@ -7,7 +7,7 @@ const db = require('mysql').createConnection({
   database: process.env.DATABASE_NAME
 })
 
-db.connect(async err => {
+db.connect(err => {
   if (err) return console.log(err)
   
   // create a table with the name ebooks

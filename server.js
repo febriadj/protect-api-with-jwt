@@ -7,10 +7,9 @@ const
   port = process.env.PORT || 3000
 
 // .env configuration
-require('dotenv').config({ path: './.env' })
+require('dotenv').config()
 
-// database
-require('./config/db')
+app.use(require('./routes/index'))
 
 // set up middleware
 app.use(bodyParser.urlencoded({ extended: false }))
