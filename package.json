@@ -1,0 +1,38 @@
+{
+  "name": "protect-api-with-jwt",
+  "version": "1.0.0",
+  "description": "menerapkan sistem otentikasi jwt pada api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/febriadj/protect-api-with-jwt.git"
+  },
+  "keywords": [
+    "rest-api",
+    "jwt",
+    "protect-api"
+  ],
+  "author": "febriadji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/febriadj/protect-api-with-jwt/issues"
+  },
+  "homepage": "https://github.com/febriadj/protect-api-with-jwt#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "randomres": "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
