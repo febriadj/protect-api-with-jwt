@@ -5,7 +5,7 @@ const
   db = require('../config/db')
 
 router.get('/', authenticateToken, (req, res, next) => {
-  db.query('SELECT * FROM ebooks', (err, result) => {
+  db.query('SELECT * FROM ebooks ORDER BY updated_at DESC', (err, result) => {
     const promise = new Promise((resolve, reject) => {
       if (err) return reject(err)
       resolve(result)
@@ -50,6 +50,19 @@ router.put('/', authenticateToken, (req, res, next) => {
       .then(result => res.json({ result }))
       .catch(err => console.log(err))
   })
+})
+
+router.delete('/', authenticateToken, (req, res, next) => {
+  const queryStr = req.query.id
+  const sql = `DELETE FROM ebooks WHERE id = '${queryStr}'`
+
+  db.query(sql, err => new Promise((resolve, reject) => {
+    if (err) return reject(err)
+    resolve('data deleted successfully')
+  })
+  .then(result => res.json({ result }))
+  .catch(err => console.log(err))
+  )
 })
 
 module.exports = router
