@@ -1,5 +1,3 @@
-"use strict"
-
 const db = require('mysql').createConnection({
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
@@ -18,8 +16,8 @@ db.connect(err => {
       title VARCHAR(125) NOT NULL,
       pages TINYINT NOT NULL,
       published INT(4) NOT NULL,
-      created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-      updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`
 
   db.query(tableEbooks, err => err ? console.log(err) : null )
