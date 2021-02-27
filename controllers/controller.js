@@ -4,6 +4,7 @@ const
   randomres = require('randomres'),
   db = require('../config/db')
 
+// displays all data from the latest update_at
 router.get('/', authenticateToken, (req, res, next) => {
   db.query('SELECT * FROM ebooks ORDER BY updated_at DESC', (err, result) => {
     const promise = new Promise((resolve, reject) => {
